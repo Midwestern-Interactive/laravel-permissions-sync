@@ -11,10 +11,46 @@ $ composer require 'mwi/laravel-permissions-sync'
 ```
 
 ### Usage
+Inside `\App\Services` make a new file named `RolesAndPermissions.php`, an example
+```php
+<?php
+namespace App\Services;
+
+class RolesAndPermissions
+{
+	/**
+	 * returns the structure of our roles and permission
+	 *
+	 * @return array
+	 * @author 
+	 **/
+	public static function structure()
+	{
+		return [
+	        'super admin' => [
+	            'view user',
+	            'create user',
+	            'update user',
+	            'delete user',
+	        ],
+	        'admin' => [
+	            'view user',
+	        ],
+	        'user' => [
+	            'view user',
+	        ]
+	    ];
+	}
+}
+```
+
 In terminal run
 ```
 $ php artisan spatie:permissions:sync
 ```
+This will sync all of your roles and permissions into the database
+
+---
 
 Flags
 
