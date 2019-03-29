@@ -1,0 +1,22 @@
+<?php
+namespace MWI\LaravelPermissionsSync;
+
+use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+
+class ServiceProvider extends LaravelServiceProvider
+{
+	/**
+	 * registers our command
+	 *
+	 * @return void
+	 * @author 
+	 **/
+	public function boot()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+               Commands\SyncPermissions::class
+            ]);
+        }
+    }
+}
