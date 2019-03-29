@@ -17,6 +17,7 @@ $ php artisan spatie:permissions:sync
 ```
 
 Flags
+
 | Flag        | Description           | Default  |
 | ------------- |:-------------:| -----:|
 | --clean      | deletes unused roles and permissions | false |
